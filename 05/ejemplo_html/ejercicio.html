@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de CSS</title>
+    <style>
+        /* Ejercicio 1: Aplica estilos directamente a los <p> */
+        /* Cambia el color de los párrafos a rojo y aumenta el tamaño de fuente a 20px */
+
+        p {
+            color: red;
+            font-size: 20px;
+        }
+
+        /* Ejercicio 2: Aplica estilos solo a los elementos con la clase "caja" */
+        /* Cambia el color de fondo a amarillo */
+
+        div.caja {
+            background-color: yellow;
+        }
+
+        /* Ejercicio 3: Aplica estilos solo a los <p> dentro de un div con la clase "contenedor" */
+        /* Cambia el color de los párrafos dentro de .contenedor a naranja */
+
+
+        .contenedor  p {
+            background-color: orange;
+        }
+
+        
+        /* Ejercicio 4: Aplica estilos solo a los <p> que son hijos directos de un div con clase "lista" */
+        /* Cambia el color de los hijos directos a azul */
+        div.lista > p {
+                color: blue;
+        }
+
+
+        /* Ejercicio 5: Aplica estilos solo a los <p> dentro de la clase "especial" */
+        /* Agrega un subrayado al texto */
+            .especial p { 
+                text-decoration: underline;
+            }
+
+
+</style>
+</head>
+<body>
+
+    <h1>Ejercicios de CSS</h1>
+
+    <h2>Ejercicio 1: Aplicar estilos a un elemento específico</h2>
+    <p>
+        Modifica la regla en CSS para que este párrafo tenga color rojo y un tamaño de fuente de 20px.
+    </p>
+
+    <h2>Ejercicio 2: Aplicar estilos a una clase específica</h2>
+    <div class="caja">
+        Cambia la regla en CSS para que este div tenga color de fondo amarillo.
+    </div>
+
+    <h2>Ejercicio 3: Aplicar estilos a los elementos dentro de una clase</h2>
+    <div class="contenedor">
+        <p>Este párrafo debería volverse naranja cuando uses `.contenedor p` en tu CSS.</p>
+    </div>
+
+    <h2>Ejercicio 4: Aplicar estilos solo a los hijos directos</h2>
+    <div class="lista">
+        <p>Este párrafo debería volverse azul usando `.lista > p` en tu CSS.</p>
+        <div>
+            <p>Este párrafo NO debe cambiar de color.</p>
+        </div>
+    </div>
+
+    <h2>Ejercicio 5: Aplicar estilos a elementos específicos dentro de una clase</h2>
+    <div class="especial">
+        <h3>Título dentro de especial</h3>
+        <p>Este párrafo dentro de `.especial` debe volverse subrayado usando `.especial p { text-decoration: underline; }`.</p>
+    </div>
+
+</body>
+</html>

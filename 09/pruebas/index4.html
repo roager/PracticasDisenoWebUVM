@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de eventos con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</style>
+</head>
+<body>
+<script>
+$(document).ready(function() {
+    $("#mostrar").click(function() {
+        $("div").fadeIn();  // Muestra el div con un efecto de desvanecimiento
+        $("#contenedor").fadeOut();
+    });
+
+    $("#ocultar").click(function() {
+        $("div").fadeOut(); // Oculta el div con un efecto de desvanecimiento
+        $("#contenedor").fadeIn();
+    });
+});
+</script>
+<button id="mostrar">Mostrar</button>
+<button id="ocultar">Ocultar</button>
+
+<div style="width: 100px; height: 100px; background-color: blue; display: none;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JbP-p40CA6o?si=qca2WpjOxmg7RFfH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</div>
+<br>
+<br>
+
+<div id="contenedor"  style="width: 500px; height: 300px;color: white; background-color: blue; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 60px; ">
+Haz click en Mostrar para ver al nuevo Bats
+</div>

@@ -1,0 +1,114 @@
+.gridx {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    grid-template-rows: repeat(4, 1fr); /* 4 filas iguales */
+    gap: 10px; /* Espaciado entre celdas */
+    width: 380px; /* Ajusta el tamaño del grid */
+    margin: 20 px  ; /* Centrar en la pantalla */
+    background-color: rgb(186, 78, 198);
+    padding: 30px;
+    border-radius: 90px; /* Bordes redondeados */
+    border-radius: 10%; /* Hace que sea un círculo */
+    border-color: coral;
+    border-style: solid;
+    border-width: 5px;
+    box-shadow: blueviolet 0px -23px 25px 0px inset;
+/*      box-shadow:  5px 10px  #999;*/
+    
+    transform:
+    perspective(900px)
+    rotateX(70deg)
+    scale(0.7);
+    box-shadow: 0px 20px 100px #555;
+    transition:1.99s ease all;
+
+}
+.gridx:hover {
+    transform:
+      rotate(0deg)
+      scale(1)
+      translateY(10px);
+  }
+
+
+.pantalla {
+    grid-column: 1 / 4;  /* Ocupa solo la sexta columna */
+    text-align: right;
+    color: rgb(9, 255, 9) ;
+    justify-self: right;
+    align-self: center;
+    margin-top: middle;
+    display: flex;
+    align-items: flex-end; 
+    gap: 10px;
+    padding-bottom: 20px;
+    background-color: rgb(0, 57, 21);
+    width: 290px;  /* Ancho del círculo */
+    height: 50px; /* Alto del círculo */
+    font-family: 'Courier New', Courier, monospace;  
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 80px; /* Bordes redondeados */
+    border-radius: 20%; /* Hace que sea un círculo */
+    border-color: #0b2f00 0px -23px 25px 0px inset, #0b2f00 0px -36px 30px 0px inset, #0b2f00 0px -79px 40px 0px inset;
+}
+.item1 {
+    background-color: #ff2f00; /* Color verde */
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;  /* Ancho del círculo */
+    height: 60px; /* Alto del círculo */
+    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 90%; /* Hace que sea un círculo */
+}
+.item2 {
+    background-color: #565656; /* Color verde */
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;  /* Ancho del círculo */
+    height: 60px; /* Alto del círculo */
+    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 75%; /* Hace que sea un círculo */
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.item2:hover {
+    background-color: #888888; /* Color verde */
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;  /* Ancho del círculo */
+    height: 60px; /* Alto del círculo */
+    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 75%; /* Hace que sea un círculo */
+
+}
+.item1:hover {
+    background-color: #ff957d; /* Color verde */
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;  /* Ancho del círculo */
+    height: 60px; /* Alto del círculo */
+    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 90%; /* Hace que sea un círculo */
+}

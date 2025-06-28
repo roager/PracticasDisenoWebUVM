@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba DOM con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #titulo { color: blue; }
+        button { margin: 10px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">¡Hola, DOM!</h1>
+    <p id="mensaje">Este es un párrafo que podemos modificar.</p>
+    
+    <button id="cambiarTexto">Cambiar Texto y Color</button>
+    <button id="agregarElemento">Agregar Nuevo Elemento</button>
+
+    <div id="contenedor"></div>
+
+    <script>
+        $(document).ready(function() {
+            // Cambiar texto y color del título
+            $("#cambiarTexto").click(function() {
+                $("#titulo").text("¡Texto cambiado!").css("color", "red");
+            });
+
+            // Agregar un nuevo elemento a la página
+            $("#agregarElemento").click(function() {
+                $("#contenedor").append("<p>🚀 Nuevo elemento agregado al DOM</p>");
+            });
+        });
+    </script>
+
+</body>
+</html>

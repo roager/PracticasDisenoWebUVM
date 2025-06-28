@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consejos Aleatorios</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1>Consejos Aleatorios</h1>
+    <button id="get-advice">Obtener Consejo</button>
+    <div id="advice-box">You will always regret the round of Tequila.</div>
+
+    <script>
+        $(document).ready(function() {
+            $("#get-advice").click(function() {
+                // Configuración de la petición AJAX
+                const settings = {
+                    async: true,
+                    crossDomain: true,
+                    url: 'https://api.adviceslip.com/advice',
+                    method: 'GET',
+                    headers: {}
+                };
+
+                // Hacer la petición AJAX
+                $.ajax(settings).done(function(response) {
+                    // Convertir la respuesta en un objeto JSON
+                    let data = JSON.parse(response);
+
+                    // Extraer el consejo y mostrarlo en el div
+                    $("#advice-box").text(data.slip.advice);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

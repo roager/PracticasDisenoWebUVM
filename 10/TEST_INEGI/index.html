@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Cambio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+ body {
+    
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* Eliminar márgenes por defecto */
+    text-align: center;
+}   
+    div {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 0px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+</style>
+<body>
+
+    <h1>Tipos de Cambio</h1>
+    <img width="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Animated-Flag-USA.gif/225px-Animated-Flag-USA.gif" alt="">
+    <img width="100" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Animated-Flag-Mexico.gif" alt="">
+    <br>
+    <button id="get-USDMXN">Tipo de Cambio USD-MXN</button>
+    <div id="USDMXN-box">Obten el último tipo de cambio USD-MXN directo del Banco de México.</div>
+    <img width="100" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Animated-Flag-Eu.gif" alt="">
+    <img width="100" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Animated-Flag-Mexico.gif" alt="">
+    <br>
+    <button id="get-EURMXN">Tipo de Cambio EUR-MXN</button>
+    <div id="EURMXN-box">Obten el último tipo de cambio EUR-MXN directo del Banco de México.</div>
+
+    
+    <h1>¿Qué Personaje de Marvel eres?</h1>
+    <img width="100" src="https://i.giphy.com/8GIrp9PyxMHbq.webp" alt="">
+    <br>
+    <button id="get-character">Tu identidad secreta en la Consola</button>
+    <script>
+        $(document).ready(function() {
+    
+            // New function to show "Buscando valores..." and delay the result
+            function showExchangeRateWithDelay(element, value, currency) {
+                $(element).text("Buscando valores...");
+    
+                setTimeout(function() {
+                    $(element).text(value + " Pesos por " + currency);
+                }, 5000);
+            }
+    
+            $("#get-USDMXN").click(function() {
+                // Configuración de la petición AJAX
+                const settings = {
+                    async: true,
+                    crossDomain: true,
+                    url: 'https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/oportuno?token=48d3c2b4baf0b44b7cf9157d9fc729bcc25667cbb76b2aef79443efbd667c5ef',
+                    method: 'GET',
+                    headers: {}
+                };
+    
+                // Hacer la petición AJAX
+                $.ajax(settings).done(function(response) {
+                    let data = response;
+    
+                    // Use the new function to show the delayed result
+                    showExchangeRateWithDelay("#USDMXN-box", data.bmx.series[0].datos[0].dato, "Dólar");
+                });
+            });
+    
+            $("#get-EURMXN").click(function() {
+                // Configuración de la petición AJAX
+                const settings = {
+                    async: true,
+                    crossDomain: true,
+                    url: 'https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF46410/datos/oportuno?token=48d3c2b4baf0b44b7cf9157d9fc729bcc25667cbb76b2aef79443efbd667c5ef',
+                    method: 'GET',
+                    headers: {}
+                };
+    
+                $.ajax(settings).done(function(response) {
+                    let data = response;
+    
+                    // Use the new function to show the delayed result
+                    showExchangeRateWithDelay("#EURMXN-box", data.bmx.series[0].datos[0].dato, "Euro");
+                });
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+            $("#get-character").click(function() {
+                // Marvel API URL with manually inserted credentials
+                const url = "http://gateway.marvel.com/v1/public/characters?apikey=74b43c84091b507498b9e6cbb7fc900f&ts=1741753052&hash=0b6fea8c4698e109b66b4aca3f5488ac&limit=1&offset=" + Math.floor(Math.random() * 1500);
+
+                // Fetch data from Marvel API
+                $.get(url, function(response) {
+                    if (response.data.results.length > 0) {
+                        let character = response.data.results[0];
+                        console.log("Tu identidad secreta es:", character.name);
+                    } else {
+                        console.log("No eres nadie.");
+                    }
+                }).fail(function() {
+                    console.log("Error trazendo dados.");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

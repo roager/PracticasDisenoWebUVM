@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<style>
+    h1 {color:red;}
+
+    h1.importante {
+        color: green;
+    }
+    
+    p {
+        color: green
+    }
+
+    .normal p {
+        color: blue
+    }
+
+    #top {
+        color: black
+    }
+    #top p {
+        color: rebeccapurple
+    }
+    #top ul li {
+        color:brown
+    }
+    #top ul li.selected {
+        font-style: italic;
+    }
+    #top > p {
+        text-align: right;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+        background-color: brown;
+    }
+
+  </style>
+<html>
+<body>
+
+<div class="importante">
+    <h1>Esto no se afecta</h1>
+</div>
+
+<h1 class="importante">
+    My First Heading
+</h1>
+
+<div id="top">
+    <p>Una p justo abajo de top</p>
+    <p>Este tambien</p>
+    <div>
+        <p>Un texto dentro de top. </p>
+        <ul>
+            <li>Elemento 1</li>
+            <li class="selected">Elemento 2</li>
+        </ul>
+    </div>
+    <p>Este tambien</p>
+</div>
+
+<p>Bla bla bla bla</p>
+<ul>
+    <li>Esto no tiene un estilo</li>
+</ul>
+
+<p>My first paragraph.</p>
+
+<p>Otro párrafo... </p>
+
+<div>
+    <p>Texto</p>
+</div>
+
+<div class="normal">
+    <span>Este es un span</span>
+</div>
+
+<div class="normal">
+    <p>Texto normal</p>
+</div>
+
+<div id="enlaces">
+    <p>Aquí vamos a poner enlaces</p>
+    <a href="#" src="https://www.google.com">Un enlace es este</a>
+</div>
+
+<div>
+    <div style="background-color: red; text-align: center;">
+        <p>Texto 1</p>
+        <p style="background-color: aquamarine; margin: 50px 20px 20px 20px; padding: 20px 5px;"  >Texto 2</p>
+        <p>Texto 3</p>
+        <img style="margin: 10px; height: 250px; " src="https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/coobkoyvjo9qdzuvikqi"></igm>
+    </div>
+    <div style="text-align: center;">
+        <img style="width: 50%" src="https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/coobkoyvjo9qdzuvikqi">
+    </div>
+</div>
+
+</body>
+</html>

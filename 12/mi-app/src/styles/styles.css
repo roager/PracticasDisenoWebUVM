@@ -1,0 +1,21 @@
+.navbar {
+    background-color: #3651b2; /* Color de fondo */
+    padding: 10px;
+    display: flex; /* Hace que los enlaces estén en línea */
+    justify-content: center; /* Centra los enlaces */
+    gap: 20px; /* Espaciado entre enlaces */
+  }
+  
+  .navbar a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .navbar a:hover {
+    background-color: #180352; /* Efecto hover */
+  }
+  

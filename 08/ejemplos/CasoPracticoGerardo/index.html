@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <section class="gridx">
+        <input type="text" allign="right" class="pantalla" id="pantalla" disabled>
+        <button class="item1"  onclick="borra()">C</button>
+        <button class="item2" onclick="clika('7')">7</button>
+        <button class="item2" onclick="clika('8')">8</button>
+        <button class="item2" onclick="clika('9')">9</button>
+        <button class="item1" onclick="clika('+')">+</button>
+        <button class="item2" onclick="clika('4')">4</button>
+        <button class="item2" onclick="clika('5')">5</button>
+        <button class="item2" onclick="clika('6')">6</button>
+        <button class="item1" onclick="clika('-')">-</button>
+        <button class="item2" onclick="clika('3')">3</button>
+        <button class="item2" onclick="clika('2')">2</button>
+        <button class="item2" onclick="clika('1')">1</button>
+        <button class="item1" onclick="clika('*')">x</button>
+        <button class="item2" onclick="clika('0')">0</button>
+        <button class="item1" onclick="clika('.')">.</button>
+        <button class="item1" onclick="calcula('=')">=</button>
+        <button class="item1" onclick="clika('/')">/</button>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

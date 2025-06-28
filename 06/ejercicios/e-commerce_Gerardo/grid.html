@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Grid + Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <style>
+        .main {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6 columnas iguales */
+            gap: 5px; 
+        }
+
+        .post {
+            padding: 20px;
+            background: #ddd;
+            text-align: center;
+        }
+
+        .item1 {
+            grid-column: 1 / 2;  /* Ocupa solo la primera columna */
+            justify-self: left;
+            color: burlywood;
+            font-size: 30px;
+            font-family: 'Arial';
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: -40px; 
+            padding-bottom: 0;
+        }
+
+        .item2 {
+            grid-column: 6 / 7;  /* Ocupa solo la sexta columna */
+            justify-self: right;
+            display: flex;
+            align-items: flex-end; 
+            padding-bottom: 0;
+        }
+        .item2 input[type="text"] {
+            width: 110px; 
+            padding: 5px;
+            font-size: 10px;
+        }
+        form {
+            display: flex; 
+            align-items: center; 
+            gap: 5px; /* Espacio entre label e input */
+        }
+        .item3 {
+            grid-column: 1 / -1;
+            background-color: rgb(34, 34, 140);
+        }
+        .item4 {
+            grid-column: 1 / 2;
+            display: grid;
+            grid-template-rows: auto auto; /* Divide la barra lateral en dos partes */
+            gap: 10px;
+            align-self: stretch; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .item4a {
+            background-color: #d5d5d5cd; 
+            padding: 15px;
+            border: dimgray 1px solid;
+            align-self: stretch; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .item4b {
+            background-color: #ffe5ac; /* Amarillo claro */
+            padding: 15px;
+            border: rgb(251, 214, 5) 1px solid;
+            align-self: stretch; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .item5 {
+            grid-column: 2 / 6;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+            .item5 div {
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 15px;
+                overflow: flow-root; 
+            }
+            .item5 h3 {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .item5 img {
+                width: 150px;
+                height: auto;
+                float: left;
+                margin-right: 15px;
+                max-width: 100%;
+            }
+            .item5 p {
+                text-align: justify;
+                margin-top: 0;
+            }
+        .item6 {
+            grid-column: 6 / 7;
+            background-color: #f8e1c4;
+            padding: 15px;
+            grid-row: span 2; 
+            align-self: stretch; 
+            display: flex;
+            flex-direction: column;
+            border: rgb(255, 111, 1) 1px solid;
+        }
+        .item6-header {
+            background-color: #d58647; 
+            color: rgb(0, 0, 0); 
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            
+        }
+
+        .item7 {
+            grid-column: 1 / -1;
+            background-color: rgba(223, 223, 223, 0.597);
+            border-top: rgb(74, 74, 74) 1px solid;
+            border-bottom: rgb(74, 74, 74) 1px solid;
+            display: flex;
+            gap: 10px; 
+            padding: 5px;
+        }
+        .item7a {
+            text-align: left;
+            flex: 1; 
+            display: flex;
+            padding: 10px;
+        }
+        .item7b {
+            text-align: right;
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Align content in the center */
+            padding: 10px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <section class="main">
+            <article class="item1">
+              <h1>Logotipo</h1>
+            </article>
+            
+            <article class="item2">
+                <form action="Buscar.html"></form>
+                <form action="/submit" method="post">
+                    <label for="nombre">Buscar:</label> <input type="text" id="buscar" name="buscar" width="40"  required>
+                </form>
+            </article>
+            
+            <article class="item3">
+                <br>
+                <br>
+            </article>
+            
+            <article class="item4">
+                <div class="item4a">            
+                    <a href="producto1.html"><img src="https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2013/04/cafe-espresso.jpg"  alt="Café Espresso" style="width:100%"></a>
+                    <a href="producto1.html"><h3>Café Espresso</h3></a>
+                    <p>El levanta pestañas, Un café fuerte y aromático para los amantes del espresso.</p>
+                </div>
+
+                <div class="item4b">            
+                    <a href="producto2.html"><img src="https://www.iniciarunacafeteria.com/storage/2019/04/0001591756.jpg" alt="Café Orgánico" style="width:100%"></a>
+                    <a href="producto2.html"><h3>Café Orgánico</h3></a>
+                    <p>Cultivado sin pesticidas, respetando el medio ambiente.</p>
+                </div>
+            </article>
+
+            <article class="item5">
+                <div>            
+                    <h3>Café Orgánico</h3>
+                    <img src="https://www.iniciarunacafeteria.com/storage/2019/04/0001591756.jpg" alt="Café Orgánico" >
+                    <p>Cultivado sin pesticidas, respetando el medio ambiente.Cultivado sin pesticidas, respetando el medio ambiente.Cultivado sin pesticidas, respetando el medio ambiente.Cultivado sin pesticidas, respetando el medio ambiente.Cultivado sin pesticidas, respetando el medio ambiente.</p>
+                </div>
+            
+                <div>            
+                    <h3>Café Gourmet</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3a13hRwFZoHd8iMeFAO3Uz8buvZCkIiDeXQ&s" alt="Café Gourmet">
+                    <p>Una mezcla exclusiva de los mejores granos. Una mezcla exclusiva de los mejores granos. Una mezcla exclusiva de los mejores granos. Una mezcla exclusiva de los mejores granos. Una mezcla exclusiva de los mejores granos. Una mezcla exclusiva de los mejores granos. Una mezcla exclusiva de los mejores granos.</p>
+                </div>
+            </article>
+            
+                
+            <article class="item6">
+                <div>
+                    <div class="item6-header">   Café Gourmet</div>         
+                    <a href="producto3.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3a13hRwFZoHd8iMeFAO3Uz8buvZCkIiDeXQ&s" alt="Café Gourmet" style="width:100%"></a>
+                    <p>Una mezcla exclusiva de los mejores granos.</p>
+                </div>
+                <div>            
+                    <div class="item6-header">   Café Gourmet</div>         
+                    <a href="producto3.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3a13hRwFZoHd8iMeFAO3Uz8buvZCkIiDeXQ&s" alt="Café Gourmet" style="width:100%"></a>
+                    <p>Una mezcla exclusiva de los mejores granos.</p>
+                </div>
+            </article>
+            
+            <article class="item7">
+                <div class="item7a">
+                    <a href="producto1.html">Producto 1</a>  |  <a href="producto2.html">Producto 2</a> | <a href="producto3.html">Producto 3</a>
+                </div>
+                <div>
+                    <p>© Copyright Café Levanta Muertos</p>
+                </div>
+            </article>
+        </section>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Café</title>
+    <style>
+    .blog {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr; /* Crea 3 columnas de igual tamaño */
+        grid-template-rows: repeat(2, auto);   /* Crea 2 filas con altura automática */
+        gap: 10px; /* Opcional: espacio entre filas y columnas */
+
+    }
+
+    .post {
+        padding: 20px;
+        background: #ddd;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <section class="blog">
+        <article class="post">Artículo 1</article>
+        <article class="post">Artículo 2</article>
+        <article class="post">Artículo 3</article>
+        <article class="post">Artículo 4</article>
+        <article class="post">Artículo 5</article>
+        <article class="post">Artículo 6</article>
+        
+    </section>
+
+</body>
+</html>

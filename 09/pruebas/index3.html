@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de eventos con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #miElemento {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            border: 2px solid blue;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="miElemento">Pasa el mouse aquí</div>
+    
+    <!-- 🔹 Agregar elementos que el script está buscando -->
+    <p>Este texto cambiará cuando hagas clic en el botón.</p>
+    <button>Haz clic aquí</button>
+    <p>Este texto cambiará cuando hagas clic en el botón.</p>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").text("¡Has hecho clic en el botón!");
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuccessFactors Employee Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, button { margin: 10px 0; padding: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Fetch Employee Job Information</h1>
+    
+    <label for="personId">Enter personIdExternal:</label>
+    <input type="text" id="personId" placeholder="e.g. sfadmin">
+    <button onclick="fetchEmployeeData()">Fetch Data</button>
+
+    <table id="employeeTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Department</th>
+                <th>Location</th>
+                <th>Start Date</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        async function fetchEmployeeData() {
+            const personId = document.getElementById("personId").value.trim();
+            if (!personId) {
+                alert("Please enter a personIdExternal.");
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:3000/fetch-employee?personId=${personId}`, {
+                    method: "GET"
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status} - ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const jobData = data.d.results; // Extract job info array
+
+                if (jobData.length === 0) {
+                    alert("No job information found for this personIdExternal.");
+                    return;
+                }
+
+                // Show the table
+                document.getElementById("employeeTable").style.display = "block";
+                const tableBody = document.getElementById("tableBody");
+                tableBody.innerHTML = ""; // Clear old data
+
+                jobData.forEach(job => {
+                    const row = `<tr>
+                        <td>${job.jobTitle || "N/A"}</td>
+                        <td>${job.department || "N/A"}</td>
+                        <td>${job.location || "N/A"}</td>
+                        <td>${job.startDate ? new Date(job.startDate).toLocaleDateString() : "N/A"}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+
+            } catch (error) {
+                alert("Failed to fetch data: " + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

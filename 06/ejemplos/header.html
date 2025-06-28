@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Café</title>
+    <style>
+       .navbar {
+            display: flex;
+            justify-content: space-evenly;
+            background: #333;
+            color: white;
+            padding: 10px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        } 
+
+        .productos {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: green;
+            flex-direction: column;
+        }
+
+        .producto {
+            background: lightgray;
+            display: flex;
+            text-align: center;
+            padding: 10px;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1>Mi Tienda</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="productos">
+        <div class="producto">Café Espresso</div>
+        <div class="producto">Café Orgánico</div>
+        <div class="producto">Café Gourmett</div>
+        <div class="producto">Más Café</div>
+    </section>
+
+</body>
+</html>
